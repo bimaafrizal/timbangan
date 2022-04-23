@@ -2,15 +2,15 @@
 
 @section('container')
     <div class="row justify-content-center">
-        <div class="col-lg-12 col-sm-6">
+        <div class="col-lg-12 col-md-10">
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800 mt-5 text-center">Aplikasi Timbangan</h1>
+            <h1 class="h3 mb-2 text-gray-800 mt-5 text-center">Pilih Rekaman</h1>
             <p class="mb-4 text-center">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the 
             <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
             <div class="row justify-content-lg-between flex-md-fill">
                 <div class="col-lg-3 col-md-3 col-sm-3">
-                    <button type="button" class="btn btn-success mb-2">Tambah User</button>
+                    <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah User</button>
                 </div>
                 <div class="col-lg-4 col-md-9 col-sm-8">
                     <div class="input-group mb-3">
@@ -40,7 +40,12 @@
                                 <tr>
                                     <td>Tiger Nixon</td>
                                     <td>System Architect</td>
-                                    <td>Edinburgh</td>
+                                    <td>
+                                        <form action="/experiment" method="GET">
+                                            @csrf
+                                            <button class="btn btn-primary">Pilih User</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -51,6 +56,28 @@
         </div>
         <!-- /.container-fluid -->
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Recipient:</label>
+                        <input type="text" name="name" class="form-control" id="name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+            </div>
+        </div>
+        </div>
         </div>
     </div>
 @endsection

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     {{-- style --}}
     <link rel="stylesheet" href="css/sb-admin-2.min.css">
-    <title>test</title>
+    <title>Timbangan Online</title>
   </head>
   <body>
     {{-- @include('partials.navbar') --}}

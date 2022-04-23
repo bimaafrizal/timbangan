@@ -13,10 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/home',function(){
-    return view('index');
+Route::get('/experiment', function () {
+    return view('experiment');
+});
+
+Route::get('/tambah-rekaman', function () {
+    return view('add_record');
+});
+Route::get('/rekam-data', function(){
+    return view('record');
 });
